@@ -5,11 +5,11 @@ import { toast } from "react-toastify";
 
 function AddStudent() {
   const [formData, setFormData] = useState({
-    peopleName: "",
-    peopleEmail: "",
-    peoplePhone: "",
-    peopleDOB: "",
-    peopleAddress: "",
+    studentName: "",
+    studentEmail: "",
+    studentPhone: "",
+    studentDOB: "",
+    studentAddress: "",
     image: null,
   });
 
@@ -28,17 +28,17 @@ function AddStudent() {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => data.append(key, value));
 
-      const res = await axios.post("http://localhost:7002/people/createPeople", data, {
+      const res = await axios.post("http://localhost:7002/student/createStudent", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
       toast.success("Student added successfully!");
       setFormData({
-        peopleName: "",
-        peopleEmail: "",
-        peoplePhone: "",
-        peopleDOB: "",
-        peopleAddress: "",
+        studentName: "",
+        studentEmail: "",
+        studentPhone: "",
+        studentDOB: "",
+        studentAddress: "",
         image: null,
       });
     } catch (err) {
@@ -57,8 +57,8 @@ function AddStudent() {
           <input
             type="text"
             className="form-control"
-            name="peopleName"
-            value={formData.peopleName}
+            name="studentName"
+            value={formData.studentName}
             onChange={handleChange}
             required
           />
@@ -69,8 +69,8 @@ function AddStudent() {
           <input
             type="email"
             className="form-control"
-            name="peopleEmail"
-            value={formData.peopleEmail}
+            name="studentEmail"
+            value={formData.studentEmail}
             onChange={handleChange}
             required
           />
@@ -81,8 +81,8 @@ function AddStudent() {
           <input
             type="text"
             className="form-control"
-            name="peoplePhone"
-            value={formData.peoplePhone}
+            name="studentPhone"
+            value={formData.studentPhone}
             onChange={handleChange}
           />
         </div>
@@ -92,8 +92,8 @@ function AddStudent() {
           <input
             type="date"
             className="form-control"
-            name="peopleDOB"
-            value={formData.peopleDOB}
+            name="studentDOB"
+            value={formData.studentDOB}
             onChange={handleChange}
           />
         </div>
@@ -102,8 +102,8 @@ function AddStudent() {
           <label className="form-label">Address</label>
           <textarea
             className="form-control"
-            name="peopleAddress"
-            value={formData.peopleAddress}
+            name="studentAddress"
+            value={formData.studentAddress}
             onChange={handleChange}
             rows="2"
           ></textarea>

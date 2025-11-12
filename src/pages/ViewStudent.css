@@ -1,0 +1,33 @@
+.view-student-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+  margin-bottom: 20px;
+}
+
+.student-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.student-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.student-details strong {
+  color: #333;
+}

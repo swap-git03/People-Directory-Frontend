@@ -11,8 +11,8 @@ function Dashboard() {
   // ✅ Fetch all students
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:7002/people/getAllPeople");
-      setStudents(res.data.people || []);
+    const res = await axios.get("http://localhost:7002/student/getAllStudents");
+setStudents(res.data.students || []);
     } catch  {
       toast.error("Failed to fetch students");
     } finally {
@@ -25,7 +25,7 @@ function Dashboard() {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
 
     try {
-      await axios.delete(`http://localhost:7002/people/deletePeople/${id}`);
+    await axios.delete(`http://localhost:7002/student/deleteStudent/${id}`);
       toast.success("Student deleted successfully");
       fetchStudents();
     } catch {
@@ -36,7 +36,7 @@ function Dashboard() {
   // ✅ Toggle active/inactive status
   const toggleStatus = async (id, currentStatus) => {
     try {
-      await axios.put(`http://localhost:7002/people/updateStatus/${id}`, {
+    await axios.patch(`http://localhost:7002/student/updateStatus/${id}`, {
         isActive: !currentStatus,
       });
       toast.success(`Status updated to ${!currentStatus ? "Active" : "Inactive"}`);
@@ -95,10 +95,10 @@ function Dashboard() {
                       <span className="text-muted">No Image</span>
                     )}
                   </td>
-                  <td>{s.peopleName}</td>
-                  <td>{s.peopleEmail}</td>
-                  <td>{s.peoplePhone || "-"}</td>
-                  <td>{s.peopleDOB ? s.peopleDOB.slice(0, 10) : "-"}</td>
+                  <td>{s.studentName}</td>
+                  <td>{s.studentEmail}</td>
+                  <td>{s.studentPhone || "-"}</td>
+                  <td>{s.studentDOB ? s.studentDOB.slice(0, 10) : "-"}</td>
                   <td>
                     <button
                       className={`btn btn-sm ${

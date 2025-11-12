@@ -1,0 +1,82 @@
+.student-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 16px 20px;
+  margin: 10px 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.student-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.student-actions button {
+  margin-left: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.student-actions .edit {
+  background: #007bff;
+  color: #fff;
+}
+
+.student-actions .edit:hover {
+  background: #0056b3;
+}
+
+.student-actions .delete {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.student-actions .delete:hover {
+  background: #d93636;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 18px;
+  color: #555;
+}
